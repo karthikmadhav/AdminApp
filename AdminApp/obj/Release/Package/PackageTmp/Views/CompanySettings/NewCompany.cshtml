@@ -1,0 +1,142 @@
+﻿@model Admin.App.Common.Models.CompanyDetails
+
+@{
+    ViewBag.Title = "NewCompany";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="~/scripts/AdminApp/Company.js"></script>
+
+
+@using (Html.BeginForm("NewCompany","CompanySettings", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class=""></i>Register Company</h1>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Company</li>
+                <li class="breadcrumb-item">@Html.ActionLink("View Company", "Company")</li>
+            </ul>
+        </div>
+        @{ Html.RenderPartial("_ErrorLayout");}
+        @Html.Hidden("hdnCompanyID", null)
+       
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tile">
+                    <div class="row">
+                        <form>
+                        <div class="col-lg-1" style="display:none;">
+                            @Html.EditorFor(model => model.CompanyID, new { htmlAttributes = new { @class = "form-control hidden" } })
+                        </div>
+                        <div class="col-lg-5">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-5 required">Company Name<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.CompanyName, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Primary Phone<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.PrimaryPhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Website</label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Website, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Address 1<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">City<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Country<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Company Logo</label>
+                                <div class="col-md-12">
+                                    <input class="form-control" type="file" name="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-5">Primary Email<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.PrimaryMailID, new { htmlAttributes = new { @class = "form-control" } })
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Fax</label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Fax, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">GST No<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.GSTNO, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Address 2</label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Address1, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">State<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="control-label col-md-5">Pincode<i style="color:red;font-size:larger;">*</i></label>
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.Pincode, new { htmlAttributes = new { @class = "form-control" } })
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                @if (Model.CompanyID > 0)
+                                {
+                                <div class="col-md-12">
+                                    <img src="@Url.Content(Model.ImagePath)" alt="Image" style="width:250px;height:150px;" />
+                                </div>
+                                }
+                            </div>
+
+                        </div>
+                        <div class="tile-footer" style="margin-left:830px;">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" type="submit" value="Create" onclick="return btnSave()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Register</button>&nbsp;&nbsp;&nbsp;
+                                    <a class="btn btn-secondary" href='@Url.Action("Company", "CompanySettings")'><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                            </form>
+                    </div>
+                   
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+   
+            }

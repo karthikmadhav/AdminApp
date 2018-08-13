@@ -1,0 +1,77 @@
+﻿@model Admin.App.Common.Models.LoginDetails
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/scripts/Plugins/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link href="~/Content/AdminApp/loginStyle.css" rel="stylesheet" />
+    <script src="~/scripts/AdminApp/common.js"></script>
+</head>
+
+<body>
+    @using (Html.BeginForm()) 
+    {
+        @*@Html.AntiForgeryToken()*@
+        <div class="container">
+<div class="card card-container">
+    <label id="lblValidation" style="display:none;margin-left:40px;" class="text-danger col-md-12"></label>
+    @*<label id="lblloginValidation" style="margin-left:40px;" class="text-danger col-md-12">@ViewBag.Message</label>*@
+    <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+    <p id="profile-name" class="profile-name-card"></p>
+    <form class="form-signin">
+        <span id="reauth-email" class="reauth-email"></span>
+        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" ,@placeholder = "User Name" } })
+        <br />
+        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control txtAlign", @placeholder = "Password" } })
+        <div id="remember" class="checkbox">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" id="btnLogin" value="Create" onclick="return btnSubmit()">Sign in</button>
+    </form>
+    <a href="#" class="forgot-password" onclick="frgtPwd()">
+        Forgot the password?
+    </a>
+</div>
+        </div>
+      
+    }
+    <script>
+        $(document).ready(function () {
+        });
+        function frgtPwd() {
+            $('#lblValidation').html("Please contact Admin.").show();
+        }
+        function btnSubmit()
+        {
+            var userName = $("#UserName").val();
+            var password = $("#Password").val();
+            if (userName == '' &&  password == '') {
+                $('#lblValidation').html("**UserName and Password is Required").show();
+                return false;
+            }
+            else if (userName == '' || password == '') {
+                $('#lblValidation').html("**UserName is Required").show();
+                return false;
+            }
+            else if (password == '') {
+                $('#lblValidation').html("**Password is Required").show();
+                return false;
+            }
+        }
+        //$("#btnLogin").click(function () {
+           
+        //});
+    </script>
+</body>
+</html>

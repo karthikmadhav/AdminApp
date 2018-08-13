@@ -1,0 +1,204 @@
+﻿@model Admin.App.Common.Models.MenuPermission
+
+@{
+    ViewBag.Title = "RolePirivileges";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="~/scripts/AdminApp/Privilege.js"></script>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class=""></i>Role Privileges</h1>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Role</li>
+                <li class="breadcrumb-item">@Html.ActionLink("View Privilege", "Privilege")</li>
+            </ul>
+        </div>
+        @{ Html.RenderPartial("_ErrorLayout");}
+        @{Html.Hidden("RedirectTo", Url.Action("Privilege", "MasterSettings"));}
+        <div class="row">
+            <div class="col-md-10">
+                <div class="tile">
+                    <div class="row">
+                        <form>
+                            <div class="col-lg-3">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-5">Role<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="col-md-12">
+                                        @Html.DropDownListFor(model => model.RoleID, new SelectList(Model.RolesItems, "RoleId", "Name"), "Select Role", new { @class = "form-control target" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-5">Menu<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="col-md-12">
+                                        @Html.DropDownListFor(model => model.MenuID, new SelectList(Model.MenuItems, "MID", "MenuName"), "Select Menu", new { @class = "form-control" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 card" id="dtAddPage">
+                                <div class="card-body">
+                                    <label class="control-label col-md-5">Set Permission<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="row">
+                                        <label for="happy" class="col-sm-4 col-md-4 control-label text-right">@Html.Label("View")</label>
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <div id="radioBtn" class="btn-group">
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdViewYes" type="radio" name="rdNewPageView" onchange="handleAddClick(this)" value="true" /> Yes</div>
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdViewNo" type="radio" name="rdNewPageView" onchange="handleAddClick(this)" value="false" /> No</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="happy" class="col-sm-4 col-md-4 control-label text-right">@Html.Label("Create")</label>
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <div id="radioBtn" class="btn-group">
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdCreateYes" type="radio" name="rdNewPageCreate" onchange="handleAddClick(this)" value="true" /> Yes</div>
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdCreateNo" type="radio" name="rdNewPageCreate" onchange="handleAddClick(this)" value="false" /> No</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="happy" class="col-sm-4 col-md-4 control-label text-right">@Html.Label("Edit")</label>
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <div id="radioBtn" class="btn-group">
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdEditYes" type="radio" name="rdNewPageEdit" onchange="handleAddClick(this)" value="true" /> Yes</div>
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdEditNo" type="radio" name="rdNewPageEdit" onchange="handleAddClick(this)" value="false" /> No</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <label for="happy" class="col-sm-4 col-md-4 control-label text-right">@Html.Label("Delete")</label>
+                                        <div class="col-md-7">
+                                            <div class="input-group">
+                                                <div id="radioBtn" class="btn-group">
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdDeleteYes" type="radio" name="rdNewPageDelete" onchange="handleAddClick(this)" value="true" /> Yes</div>
+                                                    <div class="btn btn-primary btn-sm"><input class="btn btn-primary btn-sm" id="rdDeleteNo" type="radio" name="rdNewPageDelete" onchange="handleAddClick(this)" value="false" /> No</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                       
+                    </div>
+                    <br /><br />
+                    <div id="dvAddUserPermission" class="pull-right">
+                        <input type="button" id="btnAddPageSave" value="Save" onclick="AddPageSave()" class="btn btn-primary" />&nbsp;
+                        <input type="button" id="btnAddPageCancel" value="Cancel" onclick="AddPageCancel()" class="btn btn-secondary" />&nbsp;
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#dtAddPage").hide();
+            $("#dvAddUserPermission").hide();
+        });
+
+        $("#MenuID").change(function () {
+            var MenuID = $("#MenuID option:selected").val();
+            var RoleID = $("#RoleID option:selected").val();
+            if (parseInt(MenuID) > 0 && parseInt(RoleID) > 0) {
+                $("#dtAddPage").show();
+                $("#dvAddUserPermission").show();
+            }
+            else {
+                $("#dtAddPage").hide();
+                $("#dvAddUserPermission").hide();
+            }
+        });
+        $("#RoleID").change(function () {
+            var MenuID = $("#MenuID option:selected").val();
+            var RoleID = $("#RoleID option:selected").val();
+            if (parseInt(MenuID) > 0 && parseInt(RoleID) > 0) {
+                $("#dtAddPage").show();
+                $("#dvAddUserPermission").show();
+            }
+            else {
+                $("#dtAddPage").hide();
+                $("#dvAddUserPermission").hide();
+            }
+        });
+        function AddPageSave() {
+            var res = ValidateInputs();
+            if (res) {
+                var userPermission = {
+                    MenuID: $("#MenuID option:selected").val(),
+                    RoleID: $("#RoleID option:selected").val(),
+                    CanEdit: $('input[name="rdNewPageEdit"]:checked').val(),
+                    CanCreate: $('input[name="rdNewPageCreate"]:checked').val(),
+                    CanView: $('input[name="rdNewPageView"]:checked').val(),
+                    CanDelete: $('input[name="rdNewPageDelete"]:checked').val(),
+                };
+                $.ajax({
+                    type: "POST",
+                    data: JSON.stringify(userPermission),
+                    url: "/MasterSettings/SaveRolePrivilege",
+                    contentType: 'application/json',
+                    dataType: "json",
+                    beforeSend: function () {
+
+                    },
+                    success: function (data) {
+                        if (data == "error") {
+                            return ShowErrorMsg(errorMsg.privilegeSubmitError);
+                        }
+                        $("#newRole").hide();
+                        var url = "/MasterSettings/Privilege";
+                        window.location.href = url;
+                    },
+                    failure: function (data) {
+                        return ShowErrorMsg(errorMsg.privilegeSubmitError);
+                    },
+                    error: function (data) {
+                        return ShowErrorMsg(errorMsg.privilegeSubmitError);
+                    },
+                    complete: function () {
+
+                    }
+                });
+            }
+            else {
+                ShowErrorMsg("Please Select the Role Permissions");
+            }
+        }
+        function ValidateInputs() {
+
+            var MenuID = $("#MenuID option:selected").val();
+            var RoleID = $("#RoleID option:selected").val();
+
+            var create = $('input[name="rdNewPageCreate"]:checked').val();
+            var edit = $('input[name="rdNewPageEdit"]:checked').val();
+            var view = $('input[name="rdNewPageView"]:checked').val();
+            var dele = $('input[name="rdNewPageDelete"]:checked').val();
+            if ((parseInt(MenuID) < 0 || parseInt(RoleID) < 0) || (create == undefined && edit == undefined && view == undefined && dele == undefined))
+                return false;
+            else
+                return true;
+        }
+        function AddPageCancel() {
+            var url = "/MasterSettings/Privilege";
+            window.location.href = url; 
+        }
+    </script>
+}
+
+

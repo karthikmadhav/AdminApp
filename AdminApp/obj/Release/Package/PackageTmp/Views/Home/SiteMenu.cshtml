@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Admin.App.Common.Models.Menu>
+
+<ul class="app-menu">
+    @foreach (var m in Model)
+    {
+        if (m.MenuParentID == 0)
+        {
+            var submenu = Model.Where(n => n.MenuParentID == m.MID).ToList();
+            if (submenu != null && submenu.Count > 0)
+            {
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview">
+                        <i class="@m.IconStyle"></i>
+                        <span class="app-menu__label">@m.MenuName</span>
+                        <i class="treeview-indicator">
+                        </i>
+                    </a>
+                    <ul class="treeview-menu">
+                        @foreach (var e in submenu)
+                        {
+                            <li>
+                                <a class="treeview-item" href='@Url.Action(@e.ActionName, @e.ControllerName)' onclick='navigate(this.href);'><i class="icon fa fa-circle-o"></i> <span>@e.MenuName</span></a>
+                            </li>
+                        }
+                    </ul>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a class="app-menu__item active" href='@Url.Action(@m.ActionName, @m.ControllerName)' onclick='navigate(this.href);'><i class="@m.IconStyle"></i><span class="app-menu__label">@m.MenuName</span></a>
+                </li>
+            }
+
+
+        }
+    }
+</ul>
+

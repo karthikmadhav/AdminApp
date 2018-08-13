@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AdminAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CompanyDetail">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryMailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryPhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GSTNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserDetails" Relationship="AdminAppModel.FK_UserDetails_CompanyDetails" FromRole="CompanyDetail" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" />
+    <NavigationProperty Name="UserDetails" Relationship="AdminAppModel.FK_UserDetails_Role" FromRole="Role" ToRole="UserDetail" />
+    <NavigationProperty Name="MenuPrivileges" Relationship="AdminAppModel.FK_MenuPrivilege_Role" FromRole="Role" ToRole="MenuPrivilege" />
+  </EntityType>
+  <EntityType Name="UserAuthentication">
+    <Key>
+      <PropertyRef Name="UserAuthID" />
+    </Key>
+    <Property Name="UserAuthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="UserDetail1" Relationship="AdminAppModel.FK_UserAuthentication_UserDetails1" FromRole="UserAuthentication" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="RoleId" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Pincode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryEmailID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="CompanyDetail" Relationship="AdminAppModel.FK_UserDetails_CompanyDetails" FromRole="UserDetail" ToRole="CompanyDetail" />
+    <NavigationProperty Name="Role" Relationship="AdminAppModel.FK_UserDetails_Role" FromRole="UserDetail" ToRole="Role" />
+    <NavigationProperty Name="UserAuthentications" Relationship="AdminAppModel.FK_UserAuthentication_UserDetails1" FromRole="UserDetail" ToRole="UserAuthentication" />
+  </EntityType>
+  <EntityContainer Name="AdminAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CompanyDetails" EntityType="Self.CompanyDetail" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="UserAuthentications" EntityType="Self.UserAuthentication" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetail" />
+    <FunctionImport Name="usp_GetAllCompany" ReturnType="Collection(AdminAppModel.usp_GetAllCompany_Result)" />
+    <FunctionImport Name="usp_GetAllRoles" ReturnType="Collection(AdminAppModel.usp_GetAllRoles_Result)" />
+    <FunctionImport Name="usp_GetCompanyByID" ReturnType="Collection(AdminAppModel.usp_GetCompanyByID_Result)">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_GetUserAuthByName" ReturnType="Collection(AdminAppModel.usp_GetUserAuthByName_Result)">
+      <Parameter Name="UserID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_SaveNewCompany">
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="PrimaryMailID" Mode="In" Type="String" />
+      <Parameter Name="PrimaryPhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Pincode" Mode="In" Type="String" />
+      <Parameter Name="GSTNO" Mode="In" Type="String" />
+      <Parameter Name="Myout" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_SaveRoles">
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="RoleId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateCompanyDetails">
+      <Parameter Name="CompanyID" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="PrimaryMailID" Mode="In" Type="String" />
+      <Parameter Name="PrimaryPhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="Address1" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Pincode" Mode="In" Type="String" />
+      <Parameter Name="GSTNO" Mode="In" Type="String" />
+      <Parameter Name="ImagePath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="usp_ValidateUser" ReturnType="Collection(AdminAppModel.usp_ValidateUser_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <AssociationSet Name="FK_UserDetails_CompanyDetails" Association="AdminAppModel.FK_UserDetails_CompanyDetails">
+      <End Role="CompanyDetail" EntitySet="CompanyDetails" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Role" Association="AdminAppModel.FK_UserDetails_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserAuthentication_UserDetails1" Association="AdminAppModel.FK_UserAuthentication_UserDetails1">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="UserAuthentication" EntitySet="UserAuthentications" />
+    </AssociationSet>
+    <EntitySet Name="MenuMasters" EntityType="AdminAppModel.MenuMaster" />
+    <EntitySet Name="MenuPrivileges" EntityType="AdminAppModel.MenuPrivilege" />
+    <AssociationSet Name="FK_MenuPrivilege_Role" Association="AdminAppModel.FK_MenuPrivilege_Role">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="MenuPrivilege" EntitySet="MenuPrivileges" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuPrivilege_MenuMaster" Association="AdminAppModel.FK_MenuPrivilege_MenuMaster">
+      <End Role="MenuMaster" EntitySet="MenuMasters" />
+      <End Role="MenuPrivilege" EntitySet="MenuPrivileges" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="usp_GetAllCompany_Result">
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryMailID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryPhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Pincode" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="GSTNO" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="usp_GetAllRoles_Result">
+    <Property Type="Int32" Name="RoleId" Nullable="false" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="Active" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="usp_GetCompanyByID_Result">
+    <Property Type="Int32" Name="CompanyID" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryMailID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PrimaryPhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Pincode" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="GSTNO" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="usp_GetUserAuthByName_Result">
+    <Property Type="Int32" Name="UserAuthID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="usp_ValidateUser_Result">
+    <Property Type="Int32" Name="UserAuthID" Nullable="false" />
+    <Property Type="Int32" Name="UserID" Nullable="false" />
+    <Property Type="String" Name="UserName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <Association Name="FK_UserDetails_CompanyDetails">
+    <End Type="AdminAppModel.CompanyDetail" Role="CompanyDetail" Multiplicity="1" />
+    <End Type="AdminAppModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CompanyDetail">
+        <PropertyRef Name="CompanyID" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="CompanyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Role">
+    <End Type="AdminAppModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="AdminAppModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserAuthentication_UserDetails1">
+    <End Type="AdminAppModel.UserDetail" Role="UserDetail" Multiplicity="1" />
+    <End Type="AdminAppModel.UserAuthentication" Role="UserAuthentication" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserAuthentication">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="MenuMaster">
+    <Key>
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="MenuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MenuUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="MenuParentId" Type="Int32" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="ControllerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="ActionName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IconStyle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MenuPrivileges" Relationship="AdminAppModel.FK_MenuPrivilege_MenuMaster" FromRole="MenuMaster" ToRole="MenuPrivilege" />
+  </EntityType>
+  <EntityType Name="MenuPrivilege">
+    <Key>
+      <PropertyRef Name="PrivilegeID" />
+    </Key>
+    <Property Name="PrivilegeID" Type="Int32" Nullable="false" />
+    <Property Name="MenuID" Type="Int32" Nullable="false" />
+    <Property Name="RoleID" Type="Int32" Nullable="false" />
+    <Property Name="CanView" Type="Boolean" />
+    <Property Name="CanEdit" Type="Boolean" />
+    <Property Name="CanDelete" Type="Boolean" />
+    <Property Name="CanCreate" Type="Boolean" />
+    <NavigationProperty Name="Role" Relationship="AdminAppModel.FK_MenuPrivilege_Role" FromRole="MenuPrivilege" ToRole="Role" />
+    <NavigationProperty Name="MenuMaster" Relationship="AdminAppModel.FK_MenuPrivilege_MenuMaster" FromRole="MenuPrivilege" ToRole="MenuMaster" />
+  </EntityType>
+  <Association Name="FK_MenuPrivilege_Role">
+    <End Type="AdminAppModel.Role" Role="Role" Multiplicity="1" />
+    <End Type="AdminAppModel.MenuPrivilege" Role="MenuPrivilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="MenuPrivilege">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuPrivilege_MenuMaster">
+    <End Type="AdminAppModel.MenuMaster" Role="MenuMaster" Multiplicity="1" />
+    <End Type="AdminAppModel.MenuPrivilege" Role="MenuPrivilege" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuMaster">
+        <PropertyRef Name="MenuId" />
+      </Principal>
+      <Dependent Role="MenuPrivilege">
+        <PropertyRef Name="MenuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,182 @@
+﻿@model IEnumerable<Admin.App.Common.Models.UserDetails>
+
+@{
+    ViewBag.Title = "ViewUser";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="~/scripts/AdminApp/User.js"></script>
+
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>User Details</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Users</li>
+            <li class="breadcrumb-item">@Html.ActionLink("New User", "NewUser")</li>
+        </ul>
+    </div>
+    @{ Html.RenderPartial("_ErrorLayout");}
+    @Html.Hidden("hdnCompanyID", null)
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+@if (Model != null)
+{
+                    <table class="table table-bordered table-hover" id="tblUsers">
+                        <tr>
+                            <th hidden="hidden" id="userID">
+                                @Html.DisplayNameFor(model => model.UserId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.FirstName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.LastName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PhoneNumber)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.PrimaryEmailID)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CompanyName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.RoleName)
+                            </th>
+                            <th class="">@Html.DisplayName("Action")</th>
+                        </tr>
+                       
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td hidden="hidden">
+                                    @Html.DisplayFor(modelItem => item.UserId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.PrimaryEmailID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CompanyName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.RoleName)
+                                </td>
+                                <td>
+                                    @Html.ActionLink(" ", "UpdateUser", new { id = item.UserId }, new { @class = "fa fa-pencil" }) |
+                                    <a href="javascript:void(0);" class="anchorDetail fa fa-th-list" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="@item.UserId" onclick="loadUserDetails(@item.UserId)"></a>
+                                </td>
+                            </tr>
+                        }
+                        
+                    </table>
+                    <div id="divModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">User Details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body modal-lg">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Company Name</label><br />
+                                                        <label id="cmpName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Role Name</label><br />
+                                                        <label id="roleName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Employee Code</label><br />
+                                                        <label id="empCode" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">First Name</label><br />
+                                                        <label id="fstName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Last Name</label><br />
+                                                        <label id="lstName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">User Name</label><br />
+                                                        <label id="userName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Primary Phone</label><br />
+                                                        <label id="phone" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Primary Mail</label><br />
+                                                        <label id="mail" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Address </label><br />
+                                                        <label id="cmpAddr" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Address 1</label><br />
+                                                        <label id="cmpAddr1" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">City</label><br />
+                                                        <label id="cmpCity" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">State</label><br />
+                                                        <label id="cmpState" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Country</label><br />
+                                                        <label id="cmpCountry" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Pincode</label><br />
+                                                        <label id="cmpPincode" class="control-label"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+}
+else
+{
+    <div class="form-group align-content-center">
+        <label class="align-content-center" for="company">No User Data Available !.</label>
+    </div>
+}
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<style type="text/css">
+    .fntStyle {
+        font-style: italic;
+        font-size: 20px;
+    }
+</style>
+

@@ -1,0 +1,65 @@
+﻿@model Admin.App.Common.Models.MenuPermission
+
+@{
+    ViewBag.Title = "Privilege";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <main class="app-content">
+        <div class="app-title">
+            <div>
+                <h1><i class=""></i>Role Privileges</h1>
+            </div>
+            <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Role</li>
+                <li class="breadcrumb-item">@Html.ActionLink("New Privilege", "RolePrivileges")</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <div class="tile">
+                    <div class="row">
+                        <form>
+                            <div class="col-lg-3">
+                                <div class="form-group row">
+                                    <label class="control-label col-md-5">Role<i style="color:red;font-size:larger;">*</i></label>
+                                    <div class="col-md-12">
+                                        @Html.DropDownListFor(model => model.RoleID, new SelectList(Model.RolesItems, "RoleId", "Name"), "Select Role", new { @class = "form-control target" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                <label id="tblValue" class="pull-center" style="font-size:20px;font-style:italic;margin-left:250px;"></label>
+                                <div class="tile" id="privTable">
+                                    <div class="table-responsive">
+                                        <table class="table" id="tblPriv">
+                                            <thead>
+                                                <tr>
+                                                    <th>Page Name</th>
+                                                    <th>Can View</th>
+                                                    <th>Can Create</th>
+                                                    <th>Can Edit</th>
+                                                    <th>Can Delete</th>
+                                                </tr>
+                                            </thead>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/scripts/AdminApp/Privilege.js"></script>
+}
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5cf691bc4fd14a83aafd65f3a783e16c" Name="Diagram1" ZoomLevel="76">
+        <EntityTypeShape EntityType="AdminAppModel.CompanyDetail" Width="1.5" PointX="4.25" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminAppModel.Role" Width="1.5" PointX="4.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminAppModel.UserAuthentication" Width="1.5" PointX="4.375" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdminAppModel.UserDetail" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="AdminAppModel.FK_UserDetails_CompanyDetails" />
+        <AssociationConnector Association="AdminAppModel.FK_UserDetails_Role" />
+        <AssociationConnector Association="AdminAppModel.FK_UserAuthentication_UserDetails1" />
+        <EntityTypeShape EntityType="AdminAppModel.MenuMaster" Width="1.5" PointX="6.375" PointY="0.75" />
+        <EntityTypeShape EntityType="AdminAppModel.MenuPrivilege" Width="1.5" PointX="9.875" PointY="3.75" />
+        <AssociationConnector Association="AdminAppModel.FK_MenuPrivilege_Role" />
+        <AssociationConnector Association="AdminAppModel.FK_MenuPrivilege_MenuMaster" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
