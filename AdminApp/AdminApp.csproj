@@ -497,6 +497,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\CustDoc\" />
+    <Folder Include="Deply\" />
     <Folder Include="Views\Settings\" />
   </ItemGroup>
   <ItemGroup>

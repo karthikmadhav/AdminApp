@@ -1,0 +1,158 @@
+﻿@model IEnumerable<Admin.App.Common.Models.CompanyDetails>
+
+@{
+    ViewBag.Title = "Company";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>Company Details</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Company</li>
+            <li class="breadcrumb-item">@Html.ActionLink("New Company", "NewCompany")</li>
+        </ul>
+    </div>
+    @{ Html.RenderPartial("_ErrorLayout");}
+    @Html.Hidden("hdnCompanyID", null)
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    @if (Model != null)
+                    {
+                        <table class="table table-bordered table-hover" id="tblCompany">
+                            <tr>
+                                <th hidden="hidden" id="compID">
+                                    @Html.DisplayNameFor(model => model.CompanyID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CompanyName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryPhoneNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryMailID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.State)
+                                </th>
+                                <th class="">@Html.DisplayName("Action")</th>
+                            </tr>
+                            @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td hidden="hidden">
+                                @Html.DisplayFor(modelItem => item.CompanyID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompanyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrimaryPhoneNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrimaryMailID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.City)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.State)
+                            </td>
+                            <td>
+                                @Html.ActionLink(" ", "UpdateCompany", new { id = item.CompanyID }, new { @class = "fa fa-pencil" }) |
+                                <a href="javascript:void(0);" class="anchorDetail fa fa-th-list" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="@item.CompanyID" onclick="loadCompanyDetails(@item.CompanyID)"></a>
+                            </td>
+                        </tr>
+                        }
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="form-group align-content-center">
+                            <label class="align-content-center" for="company">No Company Data Available !.</label>
+                        </div>
+                    }
+                    <div id="divModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Company Details</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body modal-lg">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Company Name</label><br />
+                                                        <label id="cmpName" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Primary Email</label><br />
+                                                        <label id="cmpMail" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Primary Phone</label><br />
+                                                        <label id="cmpPhone" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Fax</label><br />
+                                                        <label id="cmpFax" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Website</label><br />
+                                                        <label id="cmpWebsite" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">GST No</label><br />
+                                                        <label id="cmpGST" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Address</label><br />
+                                                        <label id="cmpAddr" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Address 1</label><br />
+                                                        <label id="cmpAddr1" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">City</label><br />
+                                                        <label id="cmpCity" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">State</label><br />
+                                                        <label id="cmpState" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Country</label><br />
+                                                        <label id="cmpCountry" class="control-label"></label>
+                                                    </div>
+                                                    <div class="col-4 col-sm-4">
+                                                        <label class="control-label fntStyle">Pincode</label><br />
+                                                        <label id="cmpPincode" class="control-label"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

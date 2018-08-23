@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin App</title>
+        @Styles.Render("~/Content/AdminAppStyle")
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        @RenderSection("head", required: false)
+    </head>
+    <body class="app sidebar-mini rtl">
+         <!--Header Details-->
+         <header class="app-header">
+             <a href="#" class="logo">
+                 <img style="width:230px;height:50px;" src="/Content/images/CompanyLogo/swanky.PNG">
+                 @*<span class="logo-lg"><img src="~/Content/images/CompanyLogo/logo.gif" /></span>*@
+                 @*<span class="logo-lg"><img style="width:230px;height:50px;" src="~/Content/images/CompanyLogo/compLogo_4.jpg" /></span>*@
+             </a>
+           <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+            <ul class="app-nav">
+                <li class="dropdown">
+                    <a class="app-nav__item" href="@Url.Action("LogOff","Account")" aria-label="Open Profile Menu"><i class="fa fa-power-off fa-lg"></i></a>
+                </li>
+            </ul>
+        </header>
+        <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+     
+        <aside class="app-sidebar">
+            <!--Left Panel User Details with Photo-->
+            <div class="app-sidebar__user">
+                <img class="app-sidebar__user-avatar" src="~/Content/images/User/Karthi_Passport_Size_Photo.jpg" alt="User Image" style="width:42px;">
+                 <div>
+@if (HttpContext.Current.Session["UserName"] != null && HttpContext.Current.Session["UserName"].ToString() != "")
+{
+    <p class="app-sidebar__user-name">@Session["UserName"] </p>
+    @*<p class="app-sidebar__user-designation"> Developer</p>*@
+}
+                </div>
+            </div>
+            <div id="menunavigation" style="display:none;">
+            </div>
+            <!--Menu Details-->
+            <ul class="app-menu">
+                <li><a class="app-menu__item active" href="/Home/Index"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+               
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Customer</span><i class="treeview-indicator"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="treeview-item" href="/Customer/NewCustomer"><i class="icon fa fa-circle-o"></i>New Customer</a></li>
+                        <li><a class="treeview-item" href="/Customer/ViewCustomer"><i class="icon fa fa-circle-o"></i>View Customer</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-copy"></i><span class="app-menu__label">Quote</span><i class="treeview-indicator"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="treeview-item" href="/Quote/NewQuote"><i class="icon fa fa-circle-o"></i>New Quote</a></li>
+                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>View Quote</a></li>
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file"></i><span class="app-menu__label">Invoice</span><i class="treeview-indicator"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>New Invoice</a></li>
+                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>View Invoice</a></li>
+                    </ul>
+                </li>
+                <li><a class="app-menu__item" href=""><i class="app-menu__icon ffa fa-credit-card"></i><span class="app-menu__label">Payments</span></a></li>
+                <li class="treeview">
+                    <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-cog"></i><span class="app-menu__label">Settings</span><i class="treeview-indicator"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a class="treeview-item" href="/CompanySettings/Company"><i class="icon fa fa-circle-o"></i>Company Details</a></li>
+                        <li><a class="treeview-item" href="/MasterSettings/Role"><i class="icon fa fa-circle-o"></i>Role Details</a></li>
+                        <li><a class="treeview-item" href="/MasterSettings/RolePrivileges"><i class="icon fa fa-circle-o"></i>Role Pirivileges</a></li>
+                        <li><a class="treeview-item" href="/UserDetails/ViewUser"><i class="icon fa fa-circle-o"></i>User Details</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        @RenderBody()
+        <!--Script Bundle-->
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/popper")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/adminApp")
+    </body>
+</html>

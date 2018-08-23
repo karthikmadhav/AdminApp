@@ -1,0 +1,196 @@
+﻿@model Admin.App.Common.Models.CustomerDet
+
+@{
+    ViewBag.Title = "CustomerDetails";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>Customer Details</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Customer</li>
+            <li class="breadcrumb-item">@Html.ActionLink("View Customers", "ViewCustomer")</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="row" style="margin-bottom: 2rem;">
+                    <div class="col-lg-12">
+                        <div class="bs-component">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Customer">Customer</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Address">Address</a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Documents">Documents</a></li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="Customer">
+                                    <div class="row">
+                                        <br />
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Company Name</label><br />
+                                            <label id="cmpName" class="control-label">@Model.CompanyName</label>
+                                        </div>
+                                       
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">CEO Name</label><br />
+                                            <label id="cmpName" class="control-label">@Model.CEOName</label>
+                                        </div>
+                                      
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Primary Mail</label><br />
+                                            <label id="cmpName" class="control-label">@Model.PrimaryMailID</label>
+                                        </div>
+                                      
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Primary Phone</label><br />
+                                            <label id="cmpName" class="control-label">@Model.PrimaryPhoneNo</label>
+                                        </div>
+                                       
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Contact Person Name</label><br />
+                                            <label id="cmpName" class="control-label">@Model.ContactPersonName</label>
+                                        </div>
+                                       
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Contact Number</label><br />
+                                            <label id="cmpName" class="control-label">@Model.ContactPersonNumber</label>
+                                        </div>
+                                        
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">GST</label><br />
+                                            <label id="cmpName" class="control-label">@Model.GSTNO</label>
+                                        </div>
+                                       
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Adhar</label><br />
+                                            <label id="cmpName" class="control-label">@Model.Adhar</label>
+                                        </div>
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">PAN</label><br />
+                                            <label id="cmpName" class="control-label">@Model.PAN</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Address">
+                                    <div class="row">
+                                        <br />
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing Address</label><br />
+                                            <label id="BillingAddress" class="control-label">@Model.BillingAddress</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing Address 1</label><br />
+                                            <label id="BillingAddress1" class="control-label">@Model.BillingAddress1</label> 
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing City</label><br />
+                                            <label id="BillingCity" class="control-label">@Model.BillingCity</label>
+                                        </div>
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing State</label><br />
+                                            <label id="BillingState" class="control-label">@Model.BillingState</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing Country</label><br />
+                                            <label id="BillingCountry" class="control-label">@Model.BillingCountry</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Billing Pincode</label><br />
+                                            <label id="BillingPincode" class="control-label">@Model.BillingPincode</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping Address</label><br />
+                                            <label id="ShippingAddress" class="control-label">@Model.ShippingAddress</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping Address1</label><br />
+                                            <label id="ShippingAddress1" class="control-label">@Model.ShippingAddress1</label>
+                                        </div>
+
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping City</label><br />
+                                            <label id="ShippingCity" class="control-label">@Model.ShippingCity</label>
+                                        </div>
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping State</label><br />
+                                            <label id="ShippingState" class="control-label">@Model.ShippingState</label>
+                                        </div>
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping Country</label><br />
+                                            <label id="ShippingCountry" class="control-label">@Model.ShippingCountry</label>
+                                        </div>
+                                        <div class="col-4 col-sm-4">
+                                            <br />
+                                            <label class="control-label fntStyle">Shipping Pincode</label><br />
+                                            <label id="ShippingPincode" class="control-label">@Model.ShippingPincode</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Documents">
+                                    <div class="row">
+                                        <div class="col-4 col-sm-5">
+                                            <br />
+                                            <label class="control-label col-sm-5">Customer Adhar</label>
+                                           @if (Model.AdharExt != null)
+                                           {
+                                               <a class="btn btn-info" href="@Url.Content(Model.AdharFilePath)" target="_blank">Download</a>
+                                           }
+                                           else
+                                           {
+                                               <label>Adhar File not uploaded !..</label>
+                                           }
+                                        </div>
+                                        <div class="col-4 col-sm-5">
+                                            <br />
+                                            <label class="control-label col-sm-5">Customer PAN</label>
+                                            @if (Model.PanExt != null)
+                                            {
+                                                <a class="btn btn-info" href="@Url.Content(Model.PanFilePath)" target="_blank">Download</a>
+                                            }
+                                            else
+                                            {
+                                                <label>PAN File not uploaded !..</label>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+

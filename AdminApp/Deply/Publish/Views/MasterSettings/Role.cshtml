@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Admin.App.Common.Models.RoleDetails>
+
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>Role Details</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Roles</li>
+            <li class="breadcrumb-item"><a href="javascript:void(0);"  class="" onclick="addNewRole()">New Roles</a></li>
+        </ul>
+    </div>
+    @{ Html.RenderPartial("_ErrorLayout");}
+   @Html.Hidden("hdnRoleID", null)
+    <div class="row">
+        <div class="col-md-6">
+            <div class="tile">
+                @*<h3 class="tile-title">Role</h3>*@
+                <div class="tile-body">
+@if (Model != null)
+{
+
+
+                    <table class="table table-bordered table-hover" id="tblRole">
+                        <tr>
+                            <th hidden="hidden" id="roleID">
+                                @Html.DisplayNameFor(model => model.RoleId)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Name)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Active)
+                            </th>
+                            <th class="">@Html.DisplayName("Action")</th>
+                        </tr>
+                       
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td hidden="hidden">
+                                    @Html.DisplayFor(modelItem => item.RoleId)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Active)
+                                </td>
+                                <td>
+                                    <a href="javascript:void(0);" class="anchorDetail fa fa-pencil"  onclick="editRoleDetails(@item.RoleId)"></a>
+                                </td>
+                            </tr>
+                        }
+                    </table>
+}
+else
+{
+    <div class="form-group align-content-center">
+        <label class="align-content-center" for="company">No Role Data Available !.</label>
+    </div>
+}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" id="newRole" style="display:none;">
+            <div class="tile">
+                <h4 class="" id="divTitle">New Role</h4>
+                <div class="tile-footer"></div>
+                <div class="tile-body">
+                    <form>
+                        <div class="form-group">
+                            <label class="control-label">Role Name</label>
+                            <input class="form-control col-lg-7" type="text" id="txtRollName" placeholder="Enter Role name">
+                            <label id="lblRollName" style="display:none;" class="text-danger"></label>
+                        </div>
+                    </form>
+                </div>
+                <div class="tile-footer">
+                    <button class="btn btn-primary" type="button" onclick="saveRole()" id="btnSave"><i class="fa fa-fw fa-lg fa-check-circle"></i>Save</button>&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-secondary" href="javascript:void(0);" onclick="cancel()"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
