@@ -33,6 +33,7 @@ namespace Admin.App.DataAccessLayer.DataModel
         public virtual DbSet<UserDetail> UserDetails { get; set; }
         public virtual DbSet<MenuMaster> MenuMasters { get; set; }
         public virtual DbSet<MenuPrivilege> MenuPrivileges { get; set; }
+        public virtual DbSet<CustomerDetail> CustomerDetails { get; set; }
     
         public virtual ObjectResult<usp_GetAllCompany_Result> usp_GetAllCompany()
         {
@@ -62,7 +63,7 @@ namespace Admin.App.DataAccessLayer.DataModel
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_GetUserAuthByName_Result>("usp_GetUserAuthByName", userIDParameter);
         }
     
-        public virtual int usp_SaveNewCompany(string companyName, string primaryMailID, string primaryPhoneNo, string fax, string website, string address, string address1, string city, string state, string country, string pincode, string gSTNO, ObjectParameter myout)
+        public virtual int usp_SaveNewCompany(string companyName, string primaryMailID, string primaryPhoneNo, string fax, string website, string address, string address1, string city, string state, string country, string pincode, string gSTNO, string imageExt, ObjectParameter myout)
         {
             var companyNameParameter = companyName != null ?
                 new ObjectParameter("CompanyName", companyName) :
@@ -112,10 +113,14 @@ namespace Admin.App.DataAccessLayer.DataModel
                 new ObjectParameter("GSTNO", gSTNO) :
                 new ObjectParameter("GSTNO", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_SaveNewCompany", companyNameParameter, primaryMailIDParameter, primaryPhoneNoParameter, faxParameter, websiteParameter, addressParameter, address1Parameter, cityParameter, stateParameter, countryParameter, pincodeParameter, gSTNOParameter, myout);
+            var imageExtParameter = imageExt != null ?
+                new ObjectParameter("ImageExt", imageExt) :
+                new ObjectParameter("ImageExt", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_SaveNewCompany", companyNameParameter, primaryMailIDParameter, primaryPhoneNoParameter, faxParameter, websiteParameter, addressParameter, address1Parameter, cityParameter, stateParameter, countryParameter, pincodeParameter, gSTNOParameter, imageExtParameter, myout);
         }
     
-        public virtual int usp_SaveRoles(Nullable<bool> active, string name, Nullable<int> roleId)
+        public virtual int usp_SaveRoles(Nullable<bool> active, string name, Nullable<int> roleId, ObjectParameter myout)
         {
             var activeParameter = active.HasValue ?
                 new ObjectParameter("Active", active) :
@@ -129,10 +134,10 @@ namespace Admin.App.DataAccessLayer.DataModel
                 new ObjectParameter("RoleId", roleId) :
                 new ObjectParameter("RoleId", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_SaveRoles", activeParameter, nameParameter, roleIdParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_SaveRoles", activeParameter, nameParameter, roleIdParameter, myout);
         }
     
-        public virtual int usp_UpdateCompanyDetails(Nullable<int> companyID, string companyName, string primaryMailID, string primaryPhoneNo, string fax, string website, string address, string address1, string city, string state, string country, string pincode, string gSTNO, string imagePath)
+        public virtual int usp_UpdateCompanyDetails(Nullable<int> companyID, string companyName, string primaryMailID, string primaryPhoneNo, string fax, string website, string address, string address1, string city, string state, string country, string pincode, string gSTNO, string imagePath, string imageExt)
         {
             var companyIDParameter = companyID.HasValue ?
                 new ObjectParameter("CompanyID", companyID) :
@@ -190,7 +195,11 @@ namespace Admin.App.DataAccessLayer.DataModel
                 new ObjectParameter("ImagePath", imagePath) :
                 new ObjectParameter("ImagePath", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_UpdateCompanyDetails", companyIDParameter, companyNameParameter, primaryMailIDParameter, primaryPhoneNoParameter, faxParameter, websiteParameter, addressParameter, address1Parameter, cityParameter, stateParameter, countryParameter, pincodeParameter, gSTNOParameter, imagePathParameter);
+            var imageExtParameter = imageExt != null ?
+                new ObjectParameter("ImageExt", imageExt) :
+                new ObjectParameter("ImageExt", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("usp_UpdateCompanyDetails", companyIDParameter, companyNameParameter, primaryMailIDParameter, primaryPhoneNoParameter, faxParameter, websiteParameter, addressParameter, address1Parameter, cityParameter, stateParameter, countryParameter, pincodeParameter, gSTNOParameter, imagePathParameter, imageExtParameter);
         }
     
         public virtual ObjectResult<usp_ValidateUser_Result> usp_ValidateUser(string userName, string password)

@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Admin.App.Common.Models.CustomerDet>
+
+@{
+    ViewBag.Title = "ViewCustomer";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>Customer Details</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Customer</li>
+            <li class="breadcrumb-item">@Html.ActionLink("New Customer", "NewCustomer")</li>
+        </ul>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="tile">
+                <div class="tile-body">
+                    @if (Model != null)
+                    {
+                        <table class="table table-bordered table-hover" id="tblCustomer">
+                            <tr>
+                                <th hidden="hidden" id="custID">
+                                    @Html.DisplayNameFor(model => model.CustomerID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CompanyName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CEOName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryPhoneNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryMailID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BillingCity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.BillingCountry)
+                                </th>
+                                <th class="">@Html.DisplayName("Action")</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td hidden="hidden">
+                                        @Html.DisplayFor(modelItem => item.CustomerID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CompanyName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CEOName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrimaryPhoneNo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PrimaryMailID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BillingCity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BillingCountry)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink(" ", "UpdateCustomer", new { id = item.CustomerID }, new { @class = "fa fa-pencil" }) |
+                                        @Html.ActionLink(" ", "CustomerDetails", new { id = item.CustomerID }, new { @class = "fa fa-th-list" })
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="form-group align-content-center">
+                            <label class="align-content-center" for="company">No Customer Data Available !.</label>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

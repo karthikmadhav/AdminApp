@@ -22,6 +22,39 @@
           <Property Name="Country" Type="nvarchar" MaxLength="50" />
           <Property Name="Pincode" Type="nvarchar" MaxLength="20" />
           <Property Name="GSTNO" Type="nvarchar" MaxLength="20" />
+          <Property Name="ImageExt" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CustomerDetails">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CEOName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPersonName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactPersonNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="150" />
+          <Property Name="GSTNO" Type="nvarchar" MaxLength="50" />
+          <Property Name="PAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adhar" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrimaryMailID" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrimaryPhoneNo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+          <Property Name="Website" Type="nvarchar" MaxLength="25" />
+          <Property Name="BillingAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingAddress1" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingState" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingCountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="BillingPincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingAddress1" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingState" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingCountry" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingPincode" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdharExt" Type="nvarchar" MaxLength="20" />
+          <Property Name="PanExt" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="MenuMaster">
           <Key>
@@ -166,12 +199,14 @@
           <Parameter Name="Country" Type="nvarchar" Mode="In" />
           <Parameter Name="Pincode" Type="nvarchar" Mode="In" />
           <Parameter Name="GSTNO" Type="nvarchar" Mode="In" />
+          <Parameter Name="ImageExt" Type="nvarchar" Mode="In" />
           <Parameter Name="Myout" Type="int" Mode="InOut" />
         </Function>
         <Function Name="usp_SaveRoles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Active" Type="bit" Mode="In" />
           <Parameter Name="Name" Type="nvarchar" Mode="In" />
           <Parameter Name="RoleId" Type="int" Mode="In" />
+          <Parameter Name="Myout" Type="int" Mode="InOut" />
         </Function>
         <Function Name="usp_UpdateCompanyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="CompanyID" Type="int" Mode="In" />
@@ -188,6 +223,7 @@
           <Parameter Name="Pincode" Type="nvarchar" Mode="In" />
           <Parameter Name="GSTNO" Type="nvarchar" Mode="In" />
           <Parameter Name="ImagePath" Type="nvarchar" Mode="In" />
+          <Parameter Name="ImageExt" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="usp_ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="UserName" Type="varchar" Mode="In" />
@@ -195,6 +231,7 @@
         </Function>
         <EntityContainer Name="AdminAppModelStoreContainer">
           <EntitySet Name="CompanyDetails" EntityType="Self.CompanyDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerDetails" EntityType="Self.CustomerDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuMaster" EntityType="Self.MenuMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MenuPrivilege" EntityType="Self.MenuPrivilege" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
@@ -243,6 +280,7 @@
           <Property Name="Pincode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="GSTNO" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="UserDetails" Relationship="AdminAppModel.FK_UserDetails_CompanyDetails" FromRole="CompanyDetail" ToRole="UserDetail" />
+          <Property Name="ImageExt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -313,12 +351,14 @@
             <Parameter Name="Country" Mode="In" Type="String" />
             <Parameter Name="Pincode" Mode="In" Type="String" />
             <Parameter Name="GSTNO" Mode="In" Type="String" />
+            <Parameter Name="ImageExt" Mode="In" Type="String" />
             <Parameter Name="Myout" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_SaveRoles">
             <Parameter Name="Active" Mode="In" Type="Boolean" />
             <Parameter Name="Name" Mode="In" Type="String" />
             <Parameter Name="RoleId" Mode="In" Type="Int32" />
+            <Parameter Name="Myout" Mode="InOut" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_UpdateCompanyDetails">
             <Parameter Name="CompanyID" Mode="In" Type="Int32" />
@@ -335,6 +375,7 @@
             <Parameter Name="Pincode" Mode="In" Type="String" />
             <Parameter Name="GSTNO" Mode="In" Type="String" />
             <Parameter Name="ImagePath" Mode="In" Type="String" />
+            <Parameter Name="ImageExt" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ValidateUser" ReturnType="Collection(AdminAppModel.usp_ValidateUser_Result)">
             <Parameter Name="UserName" Mode="In" Type="String" />
@@ -362,6 +403,7 @@
             <End Role="MenuMaster" EntitySet="MenuMasters" />
             <End Role="MenuPrivilege" EntitySet="MenuPrivileges" />
           </AssociationSet>
+          <EntitySet Name="CustomerDetails" EntityType="AdminAppModel.CustomerDetail" />
         </EntityContainer>
         <ComplexType Name="usp_GetAllCompany_Result">
           <Property Type="Int32" Name="CompanyID" Nullable="false" />
@@ -498,6 +540,38 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CustomerDetail">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CEOName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPersonName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactPersonNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="GSTNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adhar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryMailID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryPhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BillingPincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingAddress1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingCountry" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingPincode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdharExt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="PanExt" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -507,6 +581,7 @@
           <EntitySetMapping Name="CompanyDetails">
             <EntityTypeMapping TypeName="AdminAppModel.CompanyDetail">
               <MappingFragment StoreEntitySet="CompanyDetails">
+                <ScalarProperty Name="ImageExt" ColumnName="ImageExt" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
                 <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
                 <ScalarProperty Name="PrimaryMailID" ColumnName="PrimaryMailID" />
@@ -657,6 +732,39 @@
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
                 <ScalarProperty Name="MenuID" ColumnName="MenuID" />
                 <ScalarProperty Name="PrivilegeID" ColumnName="PrivilegeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerDetails">
+            <EntityTypeMapping TypeName="AdminAppModel.CustomerDetail">
+              <MappingFragment StoreEntitySet="CustomerDetails">
+                <ScalarProperty Name="PanExt" ColumnName="PanExt" />
+                <ScalarProperty Name="AdharExt" ColumnName="AdharExt" />
+                <ScalarProperty Name="ShippingPincode" ColumnName="ShippingPincode" />
+                <ScalarProperty Name="ShippingCountry" ColumnName="ShippingCountry" />
+                <ScalarProperty Name="ShippingState" ColumnName="ShippingState" />
+                <ScalarProperty Name="ShippingCity" ColumnName="ShippingCity" />
+                <ScalarProperty Name="ShippingAddress1" ColumnName="ShippingAddress1" />
+                <ScalarProperty Name="ShippingAddress" ColumnName="ShippingAddress" />
+                <ScalarProperty Name="BillingPincode" ColumnName="BillingPincode" />
+                <ScalarProperty Name="BillingCountry" ColumnName="BillingCountry" />
+                <ScalarProperty Name="BillingState" ColumnName="BillingState" />
+                <ScalarProperty Name="BillingCity" ColumnName="BillingCity" />
+                <ScalarProperty Name="BillingAddress1" ColumnName="BillingAddress1" />
+                <ScalarProperty Name="BillingAddress" ColumnName="BillingAddress" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="PrimaryPhoneNo" ColumnName="PrimaryPhoneNo" />
+                <ScalarProperty Name="PrimaryMailID" ColumnName="PrimaryMailID" />
+                <ScalarProperty Name="Adhar" ColumnName="Adhar" />
+                <ScalarProperty Name="PAN" ColumnName="PAN" />
+                <ScalarProperty Name="GSTNO" ColumnName="GSTNO" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ContactPersonNumber" ColumnName="ContactPersonNumber" />
+                <ScalarProperty Name="ContactPersonName" ColumnName="ContactPersonName" />
+                <ScalarProperty Name="CEOName" ColumnName="CEOName" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

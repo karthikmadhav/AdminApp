@@ -1,0 +1,331 @@
+﻿
+@{
+    ViewBag.Title = "NewQuote";
+    Layout = "~/Views/Shared/_MasterLayout.cshtml";
+}
+
+<script src="~/scripts/angular.js"></script>
+<script src="~/scripts/AngularScripts/Quote.js"></script>
+
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class=""></i>Generate Quote</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Quote</li>
+            <li class="breadcrumb-item">@Html.ActionLink("View Quotation", "ViewQuote")</li>
+        </ul>
+    </div>
+    <div class="row" ng-app="qapp" ng-controller="MainCtrl">
+        <div class="col-md-12" id="companyList">
+            <div class="tile">
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Company Name</label>
+                            <div class="col-md-12">
+                                <select data-ng-model="cust"
+                                        data-ng-options="c.CustomerID as c.CompanyName for c in customeDetails" class="form-control" ng-init="GetData()" data-ng-change="GetCustomerDetails()">
+                                    <option value="">--Select Customer--</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" id="custDetails">
+            <div class="tile">
+                <div class="row">
+                    <div class="col-lg-1" style="display:none;">
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">CEO Name</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="CEOName" ng-model="CEOName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Contact Person</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="PersonName" ng-model="PersonName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Primary Email</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="PrimaryMail" ng-model="PrimaryMail">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Contact No</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="PersonName" ng-model="PersonName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Primary Phone</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="PrimaryPhone" ng-model="PersonNo">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Website</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="Website" ng-model="Website">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">GST No</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="GSTNo" ng-model="GSTNo">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Adhar</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="Adhar" ng-model="Adhar">
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">PAN</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="PAN" ng-model="PAN">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Billing Address</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingAddress" ng-model="BillingAddress">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Billing Address1</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingAddress1" ng-model="BillingAddress1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping City</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingCity" ng-model="BillingCity">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Billing State</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingState" ng-model="BillingState">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Billing Country</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingCountry" ng-model="BillingCountry">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Billing Pincode</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="BillingPincode" ng-model="BillingPincode">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping Address</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingAddress" ng-model="ShippingAddress">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping Address1</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingAddress1" ng-model="ShippingAddress1">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping City</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingCity" ng-model="ShippingCity">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping State</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingState" ng-model="ShippingState">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping Country</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingCountry" ng-model="ShippingCountry">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5 required">Shipping Pincode</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ShippingPincode" ng-model="ShippingPincode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="shipmentDetails" class="col-md-12">
+            <div class="tile">
+                <div class="row">
+                    <div class="col-lg-1" style="display:none;">
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Consighnee Name</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ConsighneeName" ng-model="ConsighneeName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Airline Name</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="AirlineName" ng-model="AirlineName">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Job Number</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="JobNumber" ng-model="JobNumber">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">FOB Value</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="FOBValue" ng-model="FOBValue">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Destination</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="Destination" ng-model="Destination">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Clearance Scheme</label>
+                            <div class="col-md-12">
+                                <input type="text" class="form-control" id="ClearanceScheme" ng-model="ClearanceScheme">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="control-label col-md-5">Date</label>
+                            <div class="col-md-12">
+                                <input class="form-control" id="Date" type="text" placeholder="Select Date" ng-model="Date">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12" id="custItemDetails">
+            <div class="tile">
+                <div class="row">
+                    <table class="table table-bordered table-hover" id="tblCustomerItems">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th>HSN/SAC</th>
+                                <th>Item Value</th>
+                                <th>CGST(%)</th>
+                                <th>SGST(%)</th>
+                                <th>Tax(%)</th>
+                                <th>Total Value</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr></tr>
+                            <tr ng-repeat="r in rows">
+                                <td>
+                                    <select ng-model="r.item_code" ng-change="getProductDetails(r,$index)" ng-options="p.item_code as p.item_description for p in product" class="form-control">
+                                        <option value="">Select Particulars</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="text" disabled="disabled" style="width: 80px" ng-model="r.parCode" class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="text" style="width: 80px" ng-model="r.item_value" ng-change="calItemTotal($index)" class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="text" style="width: 80px" ng-model="r.item_CGST" ng-change="calItemTotal($index)"  value="0" class="form-control" />
+                                </td>
+                                <td>
+                                    <input type="text" style="width: 80px" ng-model="r.item_SGST" ng-change="calItemTotal($index)" value="0" class="form-control" />
+                                </td>
+                                <td>
+                                    <label  style="width: 80px;height:36px;" class="form-control" ng-model="r.Tax"  ng-change="calItemTotal($index)" >{{r.item_CGST*1 + r.item_SGST*1}}</label>
+                                </td>
+                                <td>
+                                    <input type="text" disabled="disabled" style="width: 80px" ng-model="r.ItemTotal" class="form-control" />
+                                </td>
+                                <td>
+                                    <div class="text-center">
+                                        <button ng-click="addRow()" class="fa fa-plus-circle"></button>
+
+                                        <button ng-click="remove($index)" class="fa fa-minus-circle"></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+
+                                <td></td>
+                                <td><b>Gross Value</b></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <strong ng-model="total">{{total_amount() |currency}}</strong>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="tile-footer" style="margin-left:830px;">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button class="btn btn-primary" type="submit" value="Create"  ng-click="create()"><i class="fa fa-fw fa-lg fa-check-circle"></i>Generate</button>&nbsp;&nbsp;&nbsp;
+                                <a class="btn btn-secondary" href='@Url.Action("ViewCustomer", "Customer")'><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <script src="~/scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+    $('#Date').datepicker({
+        format: "dd/mm/yyyy",
+        autoclose: true,
+        todayHighlight: true
+    });
+    </script>
+</main>

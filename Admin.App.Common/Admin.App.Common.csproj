@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="Interface\ICommon.cs" />
     <Compile Include="Interface\ICompanyDetails.cs" />
+    <Compile Include="Interface\ICustomerDetails.cs" />
     <Compile Include="Interface\IRole.cs" />
     <Compile Include="Interface\IUserAuthentication.cs" />
     <Compile Include="Interface\IUserDetails.cs" />
     <Compile Include="Models\CompanyDetails.cs" />
+    <Compile Include="Models\CustomerDet.cs" />
     <Compile Include="Models\LoginDetails.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\MenuPermission.cs" />

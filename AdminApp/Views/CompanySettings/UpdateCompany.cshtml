@@ -4,8 +4,6 @@
     ViewBag.Title = "UpdateCompany";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
-<script src="~/scripts/AdminApp/Company.js"></script>
-
 @using (Html.BeginForm("UpdateCompany", "CompanySettings", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
@@ -156,8 +154,4 @@
             </div>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+            }

@@ -28,6 +28,7 @@ namespace AdminApp.App_Start
             builder.RegisterType<CompanyService>().As<ICompanyDetails>();
             builder.RegisterType<UserDetailsService>().As<IUserDetails>();
             builder.RegisterType<CommonService>().As<ICommon>();
+            builder.RegisterType<CustomerService>().As<ICustomerDetails>();
             base.Load(builder);
         }
     }

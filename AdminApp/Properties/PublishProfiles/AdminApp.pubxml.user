@@ -13,16 +13,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/12/2018 19:40:03</publishTime>
     </File>
     <File Include="bin/Admin.App.BusinessLayer.dll">
-      <publishTime>08/12/2018 08:34:55</publishTime>
+      <publishTime>08/23/2018 20:06:02</publishTime>
     </File>
     <File Include="bin/Admin.App.Common.dll">
-      <publishTime>08/12/2018 08:34:54</publishTime>
+      <publishTime>08/23/2018 20:06:02</publishTime>
     </File>
     <File Include="bin/Admin.App.DataAccessLayer.dll">
-      <publishTime>08/12/2018 08:34:55</publishTime>
+      <publishTime>08/23/2018 20:06:02</publishTime>
     </File>
     <File Include="bin/AdminApp.dll">
-      <publishTime>08/12/2018 08:34:59</publishTime>
+      <publishTime>08/23/2018 20:06:08</publishTime>
     </File>
     <File Include="bin/Antlr3.Runtime.dll">
       <publishTime>02/22/2013 08:43:40</publishTime>
@@ -183,6 +183,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="Content/bootstrap.min.css.map">
       <publishTime>07/12/2018 19:42:21</publishTime>
     </File>
+    <File Include="Content/css/select2.css">
+      <publishTime>08/22/2018 17:21:30</publishTime>
+    </File>
+    <File Include="Content/css/select2.min.css">
+      <publishTime>08/22/2018 17:21:30</publishTime>
+    </File>
     <File Include="Content/Datatables/dataTables.bootstrap.css">
       <publishTime>07/12/2018 19:43:38</publishTime>
     </File>
@@ -208,7 +214,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/13/2018 14:04:18</publishTime>
     </File>
     <File Include="Content/images/CompanyLogo/CAT_MINI.png">
-      <publishTime>07/12/2018 12:53:53</publishTime>
+      <publishTime>08/11/2018 21:23:38</publishTime>
     </File>
     <File Include="Content/images/CompanyLogo/compLogo_1005.jpg">
       <publishTime>07/30/2018 19:16:24</publishTime>
@@ -292,19 +298,58 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/23/2018 15:51:56</publishTime>
     </File>
     <File Include="Content/main.css">
-      <publishTime>07/12/2018 19:52:02</publishTime>
+      <publishTime>08/17/2018 11:46:16</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.css">
+      <publishTime>08/22/2018 17:16:40</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.css.map">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.min.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.standalone.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.standalone.css.map">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker.standalone.min.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.css.map">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.min.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.standalone.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.standalone.css.map">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="Contents/bootstrap-datepicker3.standalone.min.css">
+      <publishTime>08/22/2018 17:16:39</publishTime>
     </File>
     <File Include="Global.asax">
       <publishTime>07/12/2018 19:39:48</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>08/01/2018 20:20:11</publishTime>
+      <publishTime>08/22/2018 17:21:30</publishTime>
     </File>
     <File Include="scripts/AdminApp/common.js">
       <publishTime>08/11/2018 15:07:50</publishTime>
     </File>
     <File Include="scripts/AdminApp/Company.js">
-      <publishTime>08/02/2018 19:58:36</publishTime>
+      <publishTime>08/17/2018 13:02:07</publishTime>
+    </File>
+    <File Include="scripts/AdminApp/Customer.js">
+      <publishTime>08/17/2018 11:54:02</publishTime>
     </File>
     <File Include="scripts/AdminApp/GlobalErrorHandler.js">
       <publishTime>08/10/2018 13:09:56</publishTime>
@@ -313,13 +358,442 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2018 14:35:09</publishTime>
     </File>
     <File Include="scripts/AdminApp/Role.js">
-      <publishTime>08/11/2018 14:14:57</publishTime>
+      <publishTime>08/21/2018 17:51:37</publishTime>
     </File>
     <File Include="scripts/AdminApp/User.js">
       <publishTime>08/02/2018 20:18:59</publishTime>
     </File>
+    <File Include="scripts/angular-mocks.js">
+      <publishTime>08/21/2018 18:00:33</publishTime>
+    </File>
+    <File Include="scripts/angular.js">
+      <publishTime>08/21/2018 18:00:33</publishTime>
+    </File>
+    <File Include="scripts/angular.min.js">
+      <publishTime>08/21/2018 18:00:33</publishTime>
+    </File>
+    <File Include="scripts/angular.min.js.map">
+      <publishTime>08/21/2018 18:00:33</publishTime>
+    </File>
+    <File Include="scripts/AngularScripts/Quote.js">
+      <publishTime>08/22/2018 17:47:29</publishTime>
+    </File>
+    <File Include="scripts/bootstrap-datepicker.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/bootstrap-datepicker.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/i18n/af.js">
+      <publishTime>08/22/2018 17:21:30</publishTime>
+    </File>
+    <File Include="scripts/i18n/ar.js">
+      <publishTime>08/22/2018 17:21:30</publishTime>
+    </File>
+    <File Include="scripts/i18n/az.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/bg.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/bs.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ca.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/cs.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/da.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/de.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/dsb.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/el.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/en.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/es.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/et.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/eu.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/fa.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/fi.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/fr.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/gl.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/he.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/hi.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/hr.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/hsb.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/hu.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/hy.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/id.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/is.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/it.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ja.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/km.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ko.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/lt.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/lv.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/mk.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ms.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/nb.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/nl.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/pl.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ps.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/pt-BR.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/pt.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ro.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/ru.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/sk.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/sl.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/sr-Cyrl.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/sr.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/sv.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/th.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/tr.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/uk.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/vi.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/zh-CN.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/i18n/zh-TW.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
     <File Include="scripts/jquery-ui.js">
       <publishTime>07/23/2018 15:51:56</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker-en-CA.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ar-tn.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ar.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.az.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.bg.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.bn.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.br.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.bs.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ca.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.cs.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.cy.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.da.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.de.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.el.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-AU.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-CA.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-GB.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-IE.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-NZ.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.en-ZA.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.eo.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.es.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.et.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.eu.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.fa.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.fi.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.fo.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.fr-CH.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.fr.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.gl.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.he.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.hi.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.hr.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.hu.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.hy.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.id.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.is.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.it-CH.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.it.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ja.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ka.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.kh.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.kk.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.km.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ko.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.kr.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.lt.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.lv.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.me.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.mk.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.mn.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ms.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.nl-BE.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.nl.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.no.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.oc.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.pl.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.pt-BR.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.pt.min.js">
+      <publishTime>08/22/2018 17:16:39</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ro.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.rs-latin.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.rs.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ru.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.si.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sk.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sl.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sq.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sr-latin.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sr.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sv.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.sw.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.ta.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.tg.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.th.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.tk.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.tr.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.uk.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.uz-cyrl.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.uz-latn.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.vi.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.zh-CN.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
+    </File>
+    <File Include="scripts/locales/bootstrap-datepicker.zh-TW.min.js">
+      <publishTime>08/22/2018 17:16:38</publishTime>
     </File>
     <File Include="scripts/Plugins/ai.0.22.9-build00167.js">
       <publishTime>07/12/2018 19:40:03</publishTime>
@@ -471,8 +945,14 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="scripts/Plugins/umd/popper.min.js.map">
       <publishTime>07/12/2018 19:42:20</publishTime>
     </File>
+    <File Include="scripts/select2.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
+    <File Include="scripts/select2.min.js">
+      <publishTime>08/22/2018 17:21:29</publishTime>
+    </File>
     <File Include="Views/Account/Login.cshtml">
-      <publishTime>07/27/2018 16:11:23</publishTime>
+      <publishTime>08/17/2018 13:22:12</publishTime>
     </File>
     <File Include="Views/Account/Login1.cshtml">
       <publishTime>07/26/2018 17:15:20</publishTime>
@@ -481,13 +961,25 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/10/2018 20:06:10</publishTime>
     </File>
     <File Include="Views/CompanySettings/Company.cshtml">
-      <publishTime>08/02/2018 20:28:36</publishTime>
+      <publishTime>08/17/2018 13:21:33</publishTime>
     </File>
     <File Include="Views/CompanySettings/NewCompany.cshtml">
-      <publishTime>08/11/2018 12:09:15</publishTime>
+      <publishTime>08/17/2018 13:21:27</publishTime>
     </File>
     <File Include="Views/CompanySettings/UpdateCompany.cshtml">
-      <publishTime>07/30/2018 20:11:55</publishTime>
+      <publishTime>08/17/2018 13:21:12</publishTime>
+    </File>
+    <File Include="Views/Customer/CustDet.cshtml">
+      <publishTime>08/17/2018 15:54:42</publishTime>
+    </File>
+    <File Include="Views/Customer/CustomerDetails.cshtml">
+      <publishTime>08/21/2018 17:49:54</publishTime>
+    </File>
+    <File Include="Views/Customer/NewCustomer.cshtml">
+      <publishTime>08/22/2018 18:05:33</publishTime>
+    </File>
+    <File Include="Views/Customer/ViewCustomer.cshtml">
+      <publishTime>08/17/2018 16:26:29</publishTime>
     </File>
     <File Include="Views/Home/FormSample.cshtml">
       <publishTime>07/13/2018 15:04:06</publishTime>
@@ -502,16 +994,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/11/2018 14:33:54</publishTime>
     </File>
     <File Include="Views/MasterSettings/Role.cshtml">
-      <publishTime>08/11/2018 13:28:00</publishTime>
+      <publishTime>08/21/2018 17:53:04</publishTime>
     </File>
     <File Include="Views/MasterSettings/RolePrivileges.cshtml">
       <publishTime>08/10/2018 15:20:01</publishTime>
+    </File>
+    <File Include="Views/Quote/NewQuote.cshtml">
+      <publishTime>08/23/2018 19:48:11</publishTime>
     </File>
     <File Include="Views/Shared/_ErrorLayout.cshtml">
       <publishTime>07/24/2018 18:56:19</publishTime>
     </File>
     <File Include="Views/Shared/_MasterLayout.cshtml">
-      <publishTime>08/12/2018 08:29:49</publishTime>
+      <publishTime>08/23/2018 19:58:32</publishTime>
     </File>
     <File Include="Views/UserDetails/NewUser.cshtml">
       <publishTime>08/04/2018 19:58:09</publishTime>
@@ -523,7 +1018,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/13/2018 15:45:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/12/2018 08:35:00</publishTime>
+      <publishTime>08/23/2018 20:06:15</publishTime>
     </File>
   </ItemGroup>
 </Project>

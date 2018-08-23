@@ -12,3 +12,17 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\bin\Debug\En
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Admin.App.DataAccessLayer.dll.config
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Dapper.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\Dapper.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Debug\Admin.App.DataAccessLayer.pdb

@@ -76,6 +76,9 @@
     <Compile Include="DataModel\CompanyDetail.cs">
       <DependentUpon>AdminApp.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\CustomerDetail.cs">
+      <DependentUpon>AdminApp.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModel\MenuMaster.cs">
       <DependentUpon>AdminApp.tt</DependentUpon>
     </Compile>
@@ -112,6 +115,7 @@
     <Compile Include="Provider\CommonProvider.cs" />
     <Compile Include="Provider\CompanyProvider.cs" />
     <Compile Include="Provider\ConnectionFactory.cs" />
+    <Compile Include="Provider\CustomerProvider.cs" />
     <Compile Include="Provider\RoleProvider.cs" />
     <Compile Include="Provider\UserAuthenticationProvider.cs" />
     <Compile Include="Provider\UserDetailsProvider.cs" />

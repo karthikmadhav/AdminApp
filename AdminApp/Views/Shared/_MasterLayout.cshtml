@@ -4,14 +4,16 @@
         <title>Admin App</title>
         @Styles.Render("~/Content/AdminAppStyle")
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         @RenderSection("head", required: false)
     </head>
     <body class="app sidebar-mini rtl">
          <!--Header Details-->
          <header class="app-header">
              <a href="#" class="logo">
+                 <img style="width:230px;height:50px;" src="/Content/images/CompanyLogo/swanky.PNG">
                  @*<span class="logo-lg"><img src="~/Content/images/CompanyLogo/logo.gif" /></span>*@
-                 <span class="logo-lg"><img style="width:230px;height:50px;" src="~/Content/images/CompanyLogo/compLogo_4.jpg" /></span>
+                 @*<span class="logo-lg"><img style="width:230px;height:50px;" src="~/Content/images/CompanyLogo/compLogo_4.jpg" /></span>*@
              </a>
            <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
             <ul class="app-nav">
@@ -43,14 +45,14 @@
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-user"></i><span class="app-menu__label">Customer</span><i class="treeview-indicator"></i></a>
                     <ul class="treeview-menu">
-                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>New Customer</a></li>
-                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>View Customer</a></li>
+                        <li><a class="treeview-item" href="/Customer/NewCustomer"><i class="icon fa fa-circle-o"></i>New Customer</a></li>
+                        <li><a class="treeview-item" href="/Customer/ViewCustomer"><i class="icon fa fa-circle-o"></i>View Customer</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
                     <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-copy"></i><span class="app-menu__label">Quote</span><i class="treeview-indicator"></i></a>
                     <ul class="treeview-menu">
-                        <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>New Quote</a></li>
+                        <li><a class="treeview-item" href="/Quote/NewQuote"><i class="icon fa fa-circle-o"></i>New Quote</a></li>
                         <li><a class="treeview-item" href=""><i class="icon fa fa-circle-o"></i>View Quote</a></li>
                     </ul>
                 </li>

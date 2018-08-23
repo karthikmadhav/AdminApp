@@ -16,6 +16,7 @@
         <EntityTypeShape EntityType="AdminAppModel.MenuPrivilege" Width="1.5" PointX="9.875" PointY="3.75" />
         <AssociationConnector Association="AdminAppModel.FK_MenuPrivilege_Role" />
         <AssociationConnector Association="AdminAppModel.FK_MenuPrivilege_MenuMaster" />
+        <EntityTypeShape EntityType="AdminAppModel.CustomerDetail" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

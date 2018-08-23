@@ -11,3 +11,16 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\bin\Debug\Enti
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.BusinessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.BusinessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Dapper.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\Dapper.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Debug\Admin.App.BusinessLayer.pdb

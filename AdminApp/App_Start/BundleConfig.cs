@@ -24,9 +24,10 @@ namespace AdminApp.App_Start
                       "~/scripts/Plugins/main.js",
                       "~/scripts/Plugins/chart.js",
                        "~/scripts/AdminApp/GlobalErrorHandler.js",
-                       "~/scripts/AdminApp/common.js"
+                       "~/scripts/AdminApp/common.js",
+                       "~/scripts/AdminApp/Company.js",
+                        "~/scripts/AdminApp/Role.js"
                       ));
-
             bundles.Add(new StyleBundle("~/Content/AdminAppStyle").Include(
                "~/Content/main.css"));
         }

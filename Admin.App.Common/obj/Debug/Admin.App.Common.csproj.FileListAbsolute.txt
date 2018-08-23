@@ -3,3 +3,8 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\bin\Debug\Admin.App.C
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.csprojResolveAssemblyReference.cache
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\bin\Debug\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\bin\Debug\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.csprojResolveAssemblyReference.cache
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\obj\Debug\Admin.App.Common.pdb

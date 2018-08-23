@@ -11,3 +11,16 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\bin\Release\En
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.csprojResolveAssemblyReference.cache
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.BusinessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.BusinessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Dapper.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\EntityFramework.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\Dapper.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\bin\Release\EntityFramework.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.csprojResolveAssemblyReference.cache
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.BusinessLayer\obj\Release\Admin.App.BusinessLayer.pdb

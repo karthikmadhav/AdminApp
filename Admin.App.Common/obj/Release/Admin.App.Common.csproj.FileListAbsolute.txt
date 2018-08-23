@@ -2,3 +2,7 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\bin\Release\Admin.App
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\bin\Release\Admin.App.Common.pdb
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\obj\Release\Admin.App.Common.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.Common\obj\Release\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\bin\Release\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\bin\Release\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\obj\Release\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.Common\obj\Release\Admin.App.Common.pdb

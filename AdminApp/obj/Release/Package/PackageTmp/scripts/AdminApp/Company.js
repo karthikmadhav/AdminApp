@@ -96,3 +96,25 @@ function loadCompanyDetails(compID)
         }
     });
 }
+
+function editRoleDetails(compID) {
+    var date = new Date(); // Javascript date object
+    var link = '@Url.Action("Test", "CompanySettings")';  // url should be enclosed by single quotes.
+    var args = {
+        param1: date.toISOString(),  // make sure that the date is in Javascript date object and converted to ISO string for proper casting in c#
+        param2: date.toISOString(),
+        param3: 'somevalue'
+    };
+
+    $.ajax({
+        type: "GET",
+        url: link, // url of your action
+        data: args, // parameters if available
+        dataType: "json",
+        success: function (data) {
+            window.location.href = data.redirectUrl;
+        },
+        error: function (httpRequest, textStatus, errorThrown) {  // detailed error messsage
+        }
+    });
+}

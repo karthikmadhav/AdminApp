@@ -44,6 +44,12 @@ namespace AdminApp.App_Start
                     }
                 }
             }
+            else if (authCookie == null)
+            {
+                filterContext.Result = new HttpUnauthorizedResult();
+                isAuthenticated = false;
+                type = "Authentication";
+            }
             //Authorization on Controller Level
             if (isAuthenticated)
             {

@@ -33,6 +33,7 @@ namespace Admin.App.DataAccessLayer.DataModel
         public string Country { get; set; }
         public string Pincode { get; set; }
         public string GSTNO { get; set; }
+        public string ImageExt { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserDetail> UserDetails { get; set; }

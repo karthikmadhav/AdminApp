@@ -12,3 +12,17 @@ C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\bin\Release\
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.dll
 C:\Karthik_Madhavan\Personal\MVC\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Admin.App.DataAccessLayer.dll.config
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Admin.App.DataAccessLayer.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Admin.App.Common.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Dapper.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\EntityFramework.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\EntityFramework.SqlServer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Admin.App.Common.pdb
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\Dapper.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\EntityFramework.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\bin\Release\EntityFramework.SqlServer.xml
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.dll
+C:\Karthik_Madhavan\GIT\AdminApp\Admin.App.DataAccessLayer\obj\Release\Admin.App.DataAccessLayer.pdb

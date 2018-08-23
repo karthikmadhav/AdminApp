@@ -4,7 +4,6 @@
     ViewBag.Title = "Company";
     Layout = "~/Views/Shared/_MasterLayout.cshtml";
 }
-<script src="~/scripts/AdminApp/Company.js"></script>
 <main class="app-content">
     <div class="app-title">
         <div>
@@ -22,65 +21,65 @@
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-@if (Model != null)
-{
-                    <table class="table table-bordered table-hover" id="tblCompany">
-                        <tr>
-                            <th hidden="hidden" id="compID">
-                                @Html.DisplayNameFor(model => model.CompanyID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.CompanyName)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.PrimaryPhoneNo)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.PrimaryMailID)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.City)
-                            </th>
-                            <th>
-                                @Html.DisplayNameFor(model => model.State)
-                            </th>
-                            <th class="">@Html.DisplayName("Action")</th>
-                        </tr>
-                        @foreach (var item in Model)
-                        {
+                    @if (Model != null)
+                    {
+                        <table class="table table-bordered table-hover" id="tblCompany">
                             <tr>
-                                <td hidden="hidden">
-                                    @Html.DisplayFor(modelItem => item.CompanyID)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.CompanyName)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PrimaryPhoneNo)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.PrimaryMailID)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.City)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.State)
-                                </td>
-                                <td>
-                                    @Html.ActionLink(" ", "UpdateCompany", new { id = item.CompanyID }, new { @class = "fa fa-pencil" }) |
-                                    <a href="javascript:void(0);" class="anchorDetail fa fa-th-list" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="@item.CompanyID" onclick="loadCompanyDetails(@item.CompanyID)"></a>
-                                </td>
+                                <th hidden="hidden" id="compID">
+                                    @Html.DisplayNameFor(model => model.CompanyID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CompanyName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryPhoneNo)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PrimaryMailID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.City)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.State)
+                                </th>
+                                <th class="">@Html.DisplayName("Action")</th>
                             </tr>
+                            @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td hidden="hidden">
+                                @Html.DisplayFor(modelItem => item.CompanyID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CompanyName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrimaryPhoneNo)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PrimaryMailID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.City)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.State)
+                            </td>
+                            <td>
+                                @Html.ActionLink(" ", "UpdateCompany", new { id = item.CompanyID }, new { @class = "fa fa-pencil" }) |
+                                <a href="javascript:void(0);" class="anchorDetail fa fa-th-list" data-toggle="modal" data-target=".bd-example-modal-lg" data-id="@item.CompanyID" onclick="loadCompanyDetails(@item.CompanyID)"></a>
+                            </td>
+                        </tr>
                         }
-                    </table>
-}
-else
-{
-    <div class="form-group align-content-center">
-        <label class="align-content-center" for="company">No Company Data Available !.</label>
-    </div>
-}
+                        </table>
+                    }
+                    else
+                    {
+                        <div class="form-group align-content-center">
+                            <label class="align-content-center" for="company">No Company Data Available !.</label>
+                        </div>
+                    }
                     <div id="divModal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -157,32 +156,3 @@ else
         </div>
     </div>
 </main>
-<style type="text/css">
-    .fntStyle{
-        font-style:italic;
-        font-size:20px;
-    }
-</style>
-<script type="text/javascript">
-    function editRoleDetails(compID) {
-         var date = new Date(); // Javascript date object
-        var link = '@Url.Action("Test", "CompanySettings")';  // url should be enclosed by single quotes.
-        var args = {
-            param1: date.toISOString(),  // make sure that the date is in Javascript date object and converted to ISO string for proper casting in c#
-            param2: date.toISOString(),
-            param3: 'somevalue'
-        };
-
-        $.ajax({
-            type: "GET",
-            url: link, // url of your action
-            data: args, // parameters if available
-            dataType: "json",
-            success: function (data) {
-                window.location.href = data.redirectUrl;
-            },
-            error: function (httpRequest, textStatus, errorThrown) {  // detailed error messsage
-            }
-        });
-    }
-</script>
